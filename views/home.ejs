@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to E-cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container d-flex justify-content-between"> <!-- Use flex utilities for alignment -->
+            <a class="navbar-brand">E-cart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <form action="/logout" method="get" class="ms-auto"> <!-- Use "ms-auto" for margin on the left side -->
+                <button type="submit" class="btn btn-danger">Logout</button> <!-- Apply Bootstrap button styles -->
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (2).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Electronics</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Clothing</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (1).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Books</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (3).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Home & Kitchen</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Clothing</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (2).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Electronics</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (3).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Home & Kitchen</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="images/My project (1).jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Books</h5>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            /* Aligns content to the right */
+        }
+
+        /* Style for the logout button */
+        .logout-button {
+            /* Add your desired button styling here */
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+
+</html>

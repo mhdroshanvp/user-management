@@ -1,0 +1,77 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+<!-- Main Site -->
+<main id="site-main">
+    <div class="container">
+        <div class="row justify-content-center align-items-center mt-5">
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="box-nav">
+                    <a href="/add-user" class="border-shadow new-user">
+                        <span class="text-dark">New User <i class="fas fa-user"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                
+                    <div class="input-group">
+                        <input type="text" name="searchName" id="search" class="form-control " placeholder="Search UserName">
+                        <button class="btn btn-outline-secondary" type="" onclick="searchUser()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                
+            </div>
+        </div>
+
+        <!-- Display search results if available -->
+        <% if (data && data.length > 0) { %>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Admin</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                        <tr>
+                            <td ><%= i + 1 %></td>
+                            <td ><%= data[i].name %></td>
+                            <td ><%= data[i].email %></td>
+                            <td ><%= data[i].password %></td>
+                            <td ><%= data[i].admin %></td>
+                            <td>
+                                <a href="/update-user?id=<%=data[i]._id%>" class="btn btn-white border-shadow update">
+                                    <span class="text-success"><i class="fa fa-wrench"></i></span>
+                                </a>                                     
+                                <span onclick="dlt('<%=data[i]._id%>')" class="text-danger btn btn-white border-shadow delete "><i class="fas fa-times"></i></span>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        <% } else { %>
+            <!-- Original table displaying all users -->
+            <form action="/" method="POST">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <!-- Table header and body content (same as before) -->
+                    </table>
+                </div>
+            </form>
+        <% } %>
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

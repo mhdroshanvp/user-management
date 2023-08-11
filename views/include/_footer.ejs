@@ -1,0 +1,47 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="/dashboard"></script>
+<!-- Add this script block within the <head> section of your HTML -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('update_user');
+            form.addEventListener('submit', (event) => {
+                const nameInput = form.querySelector('input[name="name"]');
+                const emailInput = form.querySelector('input[name="email"]');
+                const passwordInput = form.querySelector('input[name="password"]');
+                
+                const nameValue = nameInput.value.trim();
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+    
+                if (nameValue === '') {
+                    alert('Name field is required.');
+                    event.preventDefault();
+                }
+    
+                if (emailValue === '') {
+                    alert('Email field is required.');
+                    event.preventDefault();
+                } else if (!isValidEmail(emailValue)) {
+                    alert('Invalid email format.');
+                    event.preventDefault();
+                }
+    
+                if (passwordValue === '') {
+                    alert('Password field is required.');
+                    event.preventDefault();
+                }
+                
+            });
+    
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+<script src="/js/script.js"></script>
+</body>
+</html>
